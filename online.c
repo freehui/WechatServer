@@ -155,29 +155,3 @@ void offline_user(int sock){
 	}
 }
 
-/*
- * 下线心跳包超时的所有用户
- */
-void offline_outtime_users(void){
-
-	struct online_user * ou;
-	struct online_user * temp;
-	int i;
-
-	for (i = 0;i < HASH_SIZE;i++){
-
-		ou = online_user_hash[i];
-		if (ou == NULL)
-			continue;
-		
-		while(ou){
-
-			temp = ou->next;
-			offline_user(ou->sock);
-			ou = temp;
-		}
-			;
-	}
-}
-
-
