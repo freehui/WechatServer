@@ -14,7 +14,7 @@
  * 2. [{"a":"key"}]
  * 3. [{"a1":"key1","a2":"key2","a3":456}]
  * 4. [{"a1":123,"a2":"key"},{"b1":"dfds"},{"fgh":123,"ert":"fdg"}]
- *select * from wechat_temp_message where (srcphone='44' and dstphone='44')
+ * 
 */
 JSON_obj *parser(char *text){
 	
