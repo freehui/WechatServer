@@ -98,7 +98,7 @@ JSON_obj *parser(char *text){
 				if (*json_text == '}') /* fields end */
 					break;
 
-		        if (*json_text != ',') /* must be " ... \"abc\" } " */{
+		        if (*json_text != ',') {
 					free_json(head);				
 					return NULL;
 				}
@@ -123,7 +123,7 @@ JSON_obj *parser(char *text){
 				       *json_text != '}' &&
 				       *json_text != ','){
 
-					if (is_char(*json_text))/* can't be char */{
+					if (is_char(*json_text)){
 						free_json(head);					
 						return NULL;
 					}
