@@ -1,0 +1,3 @@
+1. 打开 CONFIG.h 配置数据库信息
+2. make 
+3. ./wechat-server
