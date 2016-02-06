@@ -204,9 +204,9 @@ int handle(int client,void *buf){
 	struct format *data = (struct format *)buf;
 
 	if (data->length == 0)
-		return;
+		return -1;
 	if (data->type > (sizeof(action_list) / 4) || data->type < 0)
-		return;
+		return -1;
 
 	data->data[data->length] = '\0';
 	user = find_user(client);
